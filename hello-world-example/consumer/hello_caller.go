@@ -6,11 +6,6 @@ import (
 	"net/http"
 )
 
-func main1() {
-	fmt.Println("start")
-	HelloCaller("http://localhost:8080", "John")
-}
-
 func HelloCaller(host, name string) (string, error) {
 	url := fmt.Sprintf("%s?name=%s", host, name)
 	req, _ := http.NewRequest("GET", url, nil)
