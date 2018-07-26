@@ -1,0 +1,53 @@
+I, [2018-07-26T12:24:12.198244 #29971]  INFO -- : Registered expected interaction GET /?name=John
+D, [2018-07-26T12:24:12.198691 #29971] DEBUG -- : {
+  "description": "",
+  "request": {
+    "method": "GET",
+    "path": {
+      "json_class": "Pact::Term",
+      "data": {
+        "generate": "/",
+        "matcher": {"json_class":"Regexp","o":0,"s":"/"}
+      }
+    },
+    "query": {
+      "name": [
+        {
+          "json_class": "Pact::Term",
+          "data": {
+            "generate": "John",
+            "matcher": {"json_class":"Regexp","o":0,"s":"[a-zA-Z]+"}
+          }
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+    },
+    "body": "Hello John!"
+  }
+}
+I, [2018-07-26T12:24:12.202032 #29971]  INFO -- : Received request GET /?name=John
+D, [2018-07-26T12:24:12.202169 #29971] DEBUG -- : {
+  "path": "/",
+  "query": "name=John",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:38711",
+    "User-Agent": "Go-http-client/1.1",
+    "Accept-Encoding": "gzip",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2018-07-26T12:24:12.202545 #29971]  INFO -- : Found matching response for GET /?name=John
+D, [2018-07-26T12:24:12.202638 #29971] DEBUG -- : {
+  "status": 200,
+  "headers": {
+  },
+  "body": "Hello John!"
+}
+I, [2018-07-26T12:24:12.245583 #29971]  INFO -- : Verifying - interactions matched
+I, [2018-07-26T12:24:12.288921 #29971]  INFO -- : Cleared interactions
+I, [2018-07-26T12:24:12.338902 #29971]  INFO -- : Writing pact for pong to /home/nvirani/go/src/github.com/nurali-techie/play-go-pact/hello-world-example/consumer/pactconsumer/../../pacts/ping-pong.json

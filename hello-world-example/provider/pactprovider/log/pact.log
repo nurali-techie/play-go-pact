@@ -1,0 +1,43 @@
+# Logfile created on 2018-07-26 11:56:15 +0530 by logger.rb/47272
+I, [2018-07-26T11:56:15.975832 #14422]  INFO -- : Running example 'Verifying a pact between hi and hello  with GET /?name=John returns a response which has status code 200'
+I, [2018-07-26T11:56:16.158134 #14422]  INFO -- : Running example 'Verifying a pact between hi and hello  with GET /?name=John returns a response which has a matching body'
+I, [2018-07-26T11:58:01.492194 #17161]  INFO -- : Running example 'Verifying a pact between hi and hello  with GET /?name=John returns a response which has status code 200'
+I, [2018-07-26T11:58:01.499439 #17161]  INFO -- : Sending GET request to path: "/?name=John" with headers: {}, see debug logs for body
+D, [2018-07-26T11:58:01.499533 #17161] DEBUG -- : body :
+I, [2018-07-26T11:58:01.516246 #17161]  INFO -- : Received response with status: 200, headers: {"Date"=>"Thu, 26 Jul 2018 06:28:01 GMT", "Content-Length"=>"11", "Content-Type"=>"text/plain; charset=utf-8"}, see debug logs for body
+D, [2018-07-26T11:58:01.516318 #17161] DEBUG -- : body: Hello John!
+I, [2018-07-26T11:58:21.943078 #17686]  INFO -- : Running example 'Verifying a pact between hi and hello  with GET /?name=John returns a response which has status code 200'
+I, [2018-07-26T11:58:21.949379 #17686]  INFO -- : Sending GET request to path: "/?name=John" with headers: {}, see debug logs for body
+D, [2018-07-26T11:58:21.949461 #17686] DEBUG -- : body :
+I, [2018-07-26T11:58:21.966266 #17686]  INFO -- : Received response with status: 200, headers: {"Date"=>"Thu, 26 Jul 2018 06:28:21 GMT", "Content-Length"=>"8", "Content-Type"=>"text/plain; charset=utf-8"}, see debug logs for body
+D, [2018-07-26T11:58:21.966339 #17686] DEBUG -- : body: Hi John!
+I, [2018-07-26T11:59:02.975016 #18592]  INFO -- : Running example 'Verifying a pact between hi and hello  with GET /?name=John returns a response which has status code 200'
+I, [2018-07-26T11:59:02.975189 #18592]  INFO -- : Sending GET request to path: "/?name=John" with headers: {}, see debug logs for body
+D, [2018-07-26T11:59:02.975236 #18592] DEBUG -- : body :
+I, [2018-07-26T11:59:02.992635 #18592]  INFO -- : Received response with status: 200, headers: {"Date"=>"Thu, 26 Jul 2018 06:29:02 GMT", "Content-Length"=>"11", "Content-Type"=>"text/plain; charset=utf-8"}, see debug logs for body
+D, [2018-07-26T11:59:02.992707 #18592] DEBUG -- : body: Hello John!
+I, [2018-07-26T12:04:26.037507 #20473]  INFO -- : Running example 'Verifying a pact between hi and hello  with GET /?name=John returns a response which has status code 200'
+I, [2018-07-26T12:04:26.037650 #20473]  INFO -- : Sending GET request to path: "/?name=John" with headers: {}, see debug logs for body
+D, [2018-07-26T12:04:26.037683 #20473] DEBUG -- : body :
+I, [2018-07-26T12:04:26.055840 #20473]  INFO -- : Received response with status: 200, headers: {"Date"=>"Thu, 26 Jul 2018 06:34:26 GMT", "Content-Length"=>"11", "Content-Type"=>"text/plain; charset=utf-8"}, see debug logs for body
+D, [2018-07-26T12:04:26.055924 #20473] DEBUG -- : body: Hello John!
+I, [2018-07-26T12:14:59.982241 #25551]  INFO -- : Running example 'Verifying a pact between hi and hello  with GET /?name=John returns a response which has status code 200'
+I, [2018-07-26T12:14:59.982416 #25551]  INFO -- : Sending GET request to path: "/?name=John" with headers: {}, see debug logs for body
+D, [2018-07-26T12:14:59.982457 #25551] DEBUG -- : body :
+I, [2018-07-26T12:15:00.001943 #25551]  INFO -- : Received response with status: 200, headers: {"Date"=>"Thu, 26 Jul 2018 06:45:00 GMT", "Content-Length"=>"11", "Content-Type"=>"text/plain; charset=utf-8"}, see debug logs for body
+D, [2018-07-26T12:15:00.002021 #25551] DEBUG -- : body: Hello John!
+I, [2018-07-26T12:18:30.442394 #27503]  INFO -- : Running example 'Verifying a pact between hi and hello  with GET /?name=John returns a response which has status code 200'
+I, [2018-07-26T12:18:30.442566 #27503]  INFO -- : Sending GET request to path: "/?name=John" with headers: {}, see debug logs for body
+D, [2018-07-26T12:18:30.442614 #27503] DEBUG -- : body :
+I, [2018-07-26T12:18:30.459994 #27503]  INFO -- : Received response with status: 200, headers: {"Date"=>"Thu, 26 Jul 2018 06:48:30 GMT", "Content-Length"=>"11", "Content-Type"=>"text/plain; charset=utf-8"}, see debug logs for body
+D, [2018-07-26T12:18:30.460070 #27503] DEBUG -- : body: Hello John!
+I, [2018-07-26T12:23:50.010612 #29782]  INFO -- : Running example 'Verifying a pact between ping and pong  with GET /?name=John returns a response which has status code 200'
+I, [2018-07-26T12:23:50.010757 #29782]  INFO -- : Sending GET request to path: "/?name=John" with headers: {}, see debug logs for body
+D, [2018-07-26T12:23:50.010789 #29782] DEBUG -- : body :
+I, [2018-07-26T12:23:50.028133 #29782]  INFO -- : Received response with status: 200, headers: {"Date"=>"Thu, 26 Jul 2018 06:53:50 GMT", "Content-Length"=>"11", "Content-Type"=>"text/plain; charset=utf-8"}, see debug logs for body
+D, [2018-07-26T12:23:50.028209 #29782] DEBUG -- : body: Hello John!
+I, [2018-07-26T12:25:16.226015 #30262]  INFO -- : Running example 'Verifying a pact between ping and pong  with GET /?name=John returns a response which has status code 200'
+I, [2018-07-26T12:25:16.226169 #30262]  INFO -- : Sending GET request to path: "/?name=John" with headers: {}, see debug logs for body
+D, [2018-07-26T12:25:16.226203 #30262] DEBUG -- : body :
+I, [2018-07-26T12:25:16.243938 #30262]  INFO -- : Received response with status: 200, headers: {"Date"=>"Thu, 26 Jul 2018 06:55:16 GMT", "Content-Length"=>"11", "Content-Type"=>"text/plain; charset=utf-8"}, see debug logs for body
+D, [2018-07-26T12:25:16.244018 #30262] DEBUG -- : body: Hello John!
