@@ -1,0 +1,154 @@
+= Hello-World Pact-Go Example
+:toc:
+:toclevels: 5
+:sectnums:
+:sectnumlevels: 4
+
+=== About example
+
+This is hello-world example to demostrated end-to-end "Consumer Driven Development" with "Pact-Go".
+
+Endpoint "/" takes query param "name" and response with "Hello $name!".
+
+For ex,
+```
+Request: http://localhost:8080/?name=John
+Response: Hello John!
+```
+
+*Pact-Approach:*
+
+Pact is about first implement "Pact-Consumer".  Pact-Consumer defines how target service should behave.  Then run "Pact-Consumer" test which will create "Pact-File".  Pact-File record service behaviour in Pact-Format.  Then implemnt "Pact-Provider".  Pact-Provider uses Pact-File to validte service behaviour.  Last run Pact-Provider.
+
+*Components:*
+
+- https://github.com/nurali-techie/play-go-pact/tree/master/hello-world-example/consumer[consumer] - the service (hello_caller) which uses another hello-world service (hello_service).
+- https://github.com/nurali-techie/play-go-pact/tree/master/hello-world-example/consumer/pactconsumer[pactconsumer] - the pact tests on consumer side.
+- https://github.com/nurali-techie/play-go-pact/tree/master/hello-world-example/pacts[pacts] - the repository of pact files.
+- https://github.com/nurali-techie/play-go-pact/tree/master/hello-world-example/provider[provider] - the service (hello_service) which gives hello-world service.
+- https://github.com/nurali-techie/play-go-pact/tree/master/hello-world-example/provider/pactprovider[pactprovider] - the pact tests on provider side.
+
+=== Pre-requisite and Setup
+
+*Pact Installation on *nix:*
+
+The following will install pact binaries into /opt/pact/bin:
+
+```
+cd /opt
+curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-ruby-standalone/master/install.sh | bash
+export PATH=$PATH:/opt/pact/bin
+go get -d github.com/pact-foundation/pact-go
+```
+
+*Clone this project*
+
+git clone https://github.com/nurali-techie/play-go-pact.git
+
+=== Run
+
+==== Pact Consumer
+
+- export PATH=$PATH:/opt/pact/bin
+- cd ./hello-world-example/consumer/
+- ls
+```
+Gopkg.lock  Gopkg.toml  hello_caller.go  pactconsumer
+```
+- dep ensure
+- ls
+```
+Gopkg.lock  Gopkg.toml  hello_caller.go  pactconsumer  vendor
+```
+- cd ./pactconsumer/
+- go test -v .
+
+```
+[user@localhost pactconsumer]$ go test -v .
+=== RUN   TestPactConsumer_Hello
+2018/07/26 12:40:23 [DEBUG] pact setup logging
+2018/07/26 12:40:23 [DEBUG] pact setup
+2018/07/26 12:40:23 [DEBUG] setting up a service manager
+2018/07/26 12:40:23 [DEBUG] setting up a service manager
+2018/07/26 12:40:23 [DEBUG] setting up a service manager
+2018/07/26 12:40:23 [DEBUG] starting service creation monitor
+2018/07/26 12:40:23 [DEBUG] starting service creation monitor
+2018/07/26 12:40:23 [DEBUG] starting service creation monitor
+2018/07/26 12:40:23 [DEBUG] starting service removal monitor
+2018/07/26 12:40:23 [DEBUG] starting service removal monitor
+2018/07/26 12:40:23 [DEBUG] starting service removal monitor
+2018/07/26 12:40:23 [DEBUG] starting mock service on port: 44283
+2018/07/26 12:40:23 [DEBUG] client: starting a server with args: [--pact-specification-version 2 --pact-dir /home/nvirani/go/src/github.com/nurali-techie/play-go-pact/hello-world-example/consumer/pactconsumer/../../pacts --log /home/nvirani/go/src/github.com/nurali-techie/play-go-pact/hello-world-example/consumer/pactconsumer/log/pact.log --consumer ping --provider pong --pact-file-write-mode overwrite] port: 44283
+2018/07/26 12:40:23 [DEBUG] starting service
+2018/07/26 12:40:23 [DEBUG] waiting for port 44283 to become available
+2018/07/26 12:40:24 [INFO] INFO  WEBrick 1.3.1
+2018/07/26 12:40:24 [INFO] INFO  ruby 2.2.2 (2015-04-13) [x86_64-linux]
+2018/07/26 12:40:24 [INFO] INFO  WEBrick::HTTPServer#start: pid=2098 port=44283
+2018/07/26 12:40:24 [DEBUG] pact add interaction
+2018/07/26 12:40:24 [DEBUG] pact setup logging
+2018/07/26 12:40:24 [DEBUG] pact setup
+2018/07/26 12:40:24 [DEBUG] pact verify
+2018/07/26 12:40:24 [DEBUG] mock service add interaction
+2018/07/26 12:40:24 [DEBUG] mock service verify
+2018/07/26 12:40:24 [DEBUG] mock service delete interactions
+--- PASS: TestPactConsumer_Hello (0.75s)
+PASS
+2018/07/26 12:40:24 [DEBUG] pact setup logging
+2018/07/26 12:40:24 [DEBUG] pact setup
+2018/07/26 12:40:24 [DEBUG] pact write Pact file
+2018/07/26 12:40:24 [DEBUG] mock service write pact
+2018/07/26 12:40:24 [DEBUG] teardown
+2018/07/26 12:40:24 [DEBUG] client: stop server
+2018/07/26 12:40:24 [DEBUG] stopping service with pid 2098
+2018/07/26 12:40:24 [INFO] INFO  going to shutdown ...
+2018/07/26 12:40:24 [INFO] INFO  WEBrick::HTTPServer#start done.
+ok  	github.com/nurali-techie/play-go-pact/hello-world-example/consumer/pactconsumer	1.298s
+```
+
+*Note:* This will create/override pact file at `/hello-world-example/pacts/ping-pong.json` 
+
+==== Pact Provider
+
+- export PATH=$PATH:/opt/pact/bin
+- cd ./hello-world-example/provider/
+- ls
+```
+Gopkg.lock  Gopkg.toml  hello_service.go  pactprovider
+```
+- dep ensure
+- ls
+```
+Gopkg.lock  Gopkg.toml  hello_service.go  pactprovider  vendor
+```
+- cd ./pactprovider/
+- go test -v .
+```
+[user@localhost pactprovider]$ go test -v .
+=== RUN   TestPactProvider_Hello
+2018/07/26 12:44:30 [INFO] checking pact-mock-service within range >= 2.9.2, < 3.0.0
+2018/07/26 12:44:30 [INFO] checking pact-provider-verifier within range >= 1.15.0, < 3.0.0
+2018/07/26 12:44:31 [INFO] checking pact-broker within range >= 1.14.0, < 2.0.0
+=== RUN   TestPactProvider_Hello/has_status_code_200
+=== RUN   TestPactProvider_Hello/has_a_matching_body
+--- PASS: TestPactProvider_Hello (2.48s)
+    --- PASS: TestPactProvider_Hello/has_status_code_200 (0.00s)
+    	pact.go:314: Verifying a pact between ping and pong  with GET /?name=John returns a response which has status code 200
+    --- PASS: TestPactProvider_Hello/has_a_matching_body (0.00s)
+    	pact.go:314: Verifying a pact between ping and pong  with GET /?name=John returns a response which has a matching body
+PASS
+ok  	github.com/nurali-techie/play-go-pact/hello-world-example/provider/pactprovider	2.482s
+```
+
+*Note:* This will use pact file at `/hello-world-example/pacts/ping-pong.json` during test.
+
+=== References
+
+https://github.com/pact-foundation/pact-go
+
+https://github.com/pact-foundation/pact-go/tree/master/examples
+
+https://dius.com.au/2016/02/03/microservices-pact/
+
+https://dius.imgix.net/2016/02/Pact1.png
+
+https://dius.imgix.net/2016/02/Pact2.png
